@@ -1,10 +1,13 @@
+//ramas: inceput joc, alg miscare, scor, 
+// testat: legare, puls, aprindere singulara, sir
+
 #include <Adafruit_NeoPixel.h>
 
 #define PINPIXEL 4   // input pin Neopixel is attached to
 
 #define PINBUTTON 2 // Button reader
 
-#define NUMPIXELS      24 // number of neopixels in strip
+#define NUMPIXELS   24 // number of pixels in neopixels
 
 Adafruit_NeoPixel pixels = Adafruit_NeoPixel(NUMPIXELS, PINPIXEL, NEO_GRB + NEO_KHZ800);
 
@@ -22,7 +25,7 @@ void setup() {
   // initialize button
   pinMode(PINBUTTON, INPUT);
   
-  Serial.begin(9600);
+  //Serial.begin(9600);
   
 }
 
@@ -30,7 +33,7 @@ void loop() {
   setColor();
   
   buttonState = digitalRead(PINBUTTON);
-  Serial.println(buttonState);
+  //Serial.println(buttonState);
 
   if( buttonState = 1) {
     for (int i=0; i < NUMPIXELS; i++) {
@@ -59,8 +62,8 @@ void loop() {
   
 }
 
-// setColor()
-// picks random values to set for RGB
+
+// picks random  RGB
 void setColor(){
   redColor = random(0, 255);
   greenColor = random(0,255);
